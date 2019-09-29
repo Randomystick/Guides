@@ -1,0 +1,17 @@
+cd .. == go back
+cd x == go into x
+pwd == show current directory
+ls == list files in current directory
+
+mkdir newFolder == create newFolder in current directory
+cp soureFile targetFile == copy paste one file content into another
+cp -r sourceFolder targetFolder == copy paste, recursively, one folder and all its content into another
+rm deletThis = remove selected file (CANNOT BE UNDONE)
+mv oldName newName == rename file
+
+Ctrl + L == clear terminal screen
+
+==============================================
+
+make progName == compile program with progName
+./progName == run progName
