@@ -1,0 +1,13 @@
+pwd == show current directory
+touch == create new file (.txt, .zip, etc)
+locate word0 || locate -i *word1*word2 == search for file containing the words; -i == ignore case
+sort file || default alphabetically; -r == reverse sorting, -n == numerically
+Pipes '|' send the output of one command as input of another command.
+
+sudo (command) == exec (command) with admin/root privileges
+apt-get == install packages; requires sudo prefix
+
+echo lorem ipsum >> file.txt == move data into new/existing file
+cat file.txt | less == display file contents; can use up and down keys to scroll less for output
+grep searchString == Ctrl+F; can use -i, -n (shows matching line & number), -v (shows does NOT contain instead)
+

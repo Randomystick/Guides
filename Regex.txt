@@ -1,0 +1,79 @@
+=====================================================================================================
+======================  R E G U L A R   E X P R E S S I O N S   -   R E G E X  ======================
+=====================================================================================================
+ 
+a regex search is delimited by two slash characters e.g. /abc/. At the end we can specify flags:
+g (global): does not return after the first match
+m (multi-line): ^ and $ will match the start and end of a line, instead of the whole string
+i (insensitive): makes the whole expression case-insensitive (for instance /aBc/i would match AbC)
+
+^a == matches any string that STARTS with 'a'
+z$ == matches any string that ENDS with 'z'
+end == matches any string that HAS THE TEXT end IN IT
+
+. == wildcard; if you want a literal dot you need \.
+
+abc* == has ab followed by ZERO OR MORE c
+abc+ == has ab followed by ONE OR MORE c
+abc? == has ab followed by ONLY ZERO OR ONE c
+
+cm{2} == has c followed by EXACTLY 2 'm's
+cn{1,3} == has c followed by BETWEEN 1 AND 3 'n's
+co{2, } == has c followed by 2 OR MORE 'o's
+
+\d == matches a SINGLE DIGIT CHARACTER
+\w == matches a WORD CHARACTER (alphabets, numbers, _)
+\s == matches a WHITESPACE CHARACTER (includes tabs \t and newline \n and \r return carriage, basically the same as \n)
+negations = capital letter versions (i.e. \D == NON DIGIT CHARACTER)
+
+[abc] == a|b|c == [a-c] either a or b or c
+[a-fA-F0-9] == a single hexadecimal digit
+[^a-zA-z] == NOT a letter from a to z or from A to Z
+
+\b == one side A is a word, the other side B is not a word (e.g. a space)
+\B == one side A is a word, the othe side B is also a word
+side A is determined by the text typed
+--- \btxt == left of txt is not a word
+--- txt\b == right of text is not a word
+--- combined: \btxt\b == find only isolated txt
+--- negated:  \Btxttwo\B == find only txttwo enclosed in other words 
+
+
+====== GREEDY vs LAZY SEARCH
+Greedy: search until the end of the line and return the longest possible string that
+        matches the regex. This is the default behaviour.
+Lazy: search until the closing is found and return the shortest possible string that
+      matches the regex.
+e.g.
+<(.*)>  == returns <h1>Helo Worl</h1>
+<(.*?)> == returns <h1>
+GREEDY vs LAZY SEARCH ======
+
+
+====== CAPTURED GROUPS
+http://stackoverflow.com/
+https://stackoverflow.com/questions/tagged/regex
+
+(?:https?|ftp)://(?<website>[^/\r\n]+)(/[^\r\n]*)?
+(http or https or ftp) :// (NOT / or newline or return carriage, repeated at least once) / (NOT newline or return carriage, optional, repeat if needed)
+?: == do not capture the https
+
+Match "http://stackoverflow.com/"
+     Group 1 (named 'website'): "stackoverflow.com" 
+     Group 2: "/"
+
+Match "https://stackoverflow.com/questions/tagged/regex" 
+     Group 1 (named 'website'): "stackoverflow.com" 
+     Group 2: "/questions/tagged/regex"
+
+Reference Group 1 using \k<website>
+CAPTURED GROUPS ======
+
+
+d(?=r) == matches a d only if is followed by r, but r will not be part of the overall regex match
+(?<=r)d == matches a d only if is preceded by an r, but r will not be part of the overall regex match 
+
+
+result = line.MATCH(regex) == stores all matches into result (if global flag is used aswell)
+result = regex.TEST(line) == returns a boolean into result whether a match exists
+
