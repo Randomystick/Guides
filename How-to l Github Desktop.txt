@@ -1,0 +1,13 @@
+ERRORS
+
+// commit failed - exit code 128 received, with output: 'fatal: unable to write new_index file'
+-- PROB: This occurs when trying to commit a file with the same name and type but different encoding, e.g. changing a .txt file from
+--       ANSI to Unicode in local. The local Unicode is incompatible with the git ANSI.
+-- SOLN: Delete the git version and then commit the file, cloning the file instead of trying (and failing) to update it. You may get a merge
+--       conflict; just resolve it by selecting the modify change rather than the delete change.
+
+
+//git command could not be found and could not find ssh-agent
+-- PROB: Github Desktop updated (likely automatically) and now there's conflict between the old and new version.
+-- SOLN: Go to AppData > Local > GitHubDesktop and delete all the app-x.x.x except the latest one (e.g. there is app-2.5.2 and app-1.15.3,
+--       delete app-1.15.3)
