@@ -77,3 +77,10 @@ d(?=r) == matches a d only if is followed by r, but r will not be part of the ov
 result = line.MATCH(regex) == stores all matches into result (if global flag is used aswell)
 result = regex.TEST(line) == returns a boolean into result whether a match exists
 
+
+====================================================================================================
+===============================  H O W   T O   -   I N   P Y T H O N ===============================
+====================================================================================================
+
+import re
+re.search('search%term', body%to%search) -> returns the search term
