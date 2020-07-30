@@ -1,0 +1,24 @@
+1. Download Python from https://www.python.org/downloads/
+
+2. If installation hangs:
+	Abort current installation
+	UNCHECK "Install for all users" then proceed
+
+3. Verify Python installation:
+	Open cmd and type: python
+
+4. cmd should respond with:
+	Python x.x.x .....
+	Type "help", "copyright", "credits" or "license" for more information.
+
+5. Go to https://bootstrap.pypa.io/get-pip.py and save the file
+
+6. In cmd, cd to the directory with get-pip.py and type: python get-pip.py
+
+7. Verify pip installation:
+	In cmd, type: pip --version
+
+8. If pip is not recognised, add pip to envrionment variables:
+	Under PATH, click Edit
+	Put semicolon;
+	Add the pip path e.g. C:\Users\Bryan Leow\AppData\Local\Programs\Python\Python38-32\Scripts
