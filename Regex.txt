@@ -66,7 +66,7 @@ Match "https://stackoverflow.com/questions/tagged/regex"
      Group 1 (named 'website'): "stackoverflow.com" 
      Group 2: "/questions/tagged/regex"
 
-Reference Group 1 using \k<website>
+Reference Group 1 using \k<website>, Group 2 with $2
 CAPTURED GROUPS ======
 
 
