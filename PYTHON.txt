@@ -1,0 +1,2 @@
+for i in str == for i in len(range(str))
+for i in range(int)
